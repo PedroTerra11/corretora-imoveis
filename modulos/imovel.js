@@ -6,18 +6,22 @@ const db = [];
 let proxId = 1;
 
 const model = (id = proxId++) => {
-  const nome = prompt("Nome: ");
+  const numero = prompt("Número: ");
+  const rua = prompt("Rua: ");
+  const bairro = prompt("Bairro:")
 
   let id_corretora = 0;
 
   if (corretora.index()) {
-    id_corretora = parseInt(prompt("ID do corretor: "));
+    id_corretora = parseInt(prompt("ID da corretora: "));
   } else console.log("Cadastre uma corretora para inserir um corretor");
 
-  if (nome != "" && corretora.show(id_corretora)) {
+  if (numero > 0 && corretora.show(id_corretora) && rua != "" && bairro != "") {
     return {
-      nome,
       id,
+      numero,
+      rua,
+      bairro,
       id_corretora,
     };
   }
@@ -30,7 +34,7 @@ const store = () => {
 
   if (novo) {
     db.push(novo);
-    console.log("Corretor adicionado com sucesso!");
+    console.log("Imóvel adicionado com sucesso!");
   }
 };
 

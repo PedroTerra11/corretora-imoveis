@@ -10,8 +10,9 @@ const model = (id = proxId++) => {
 
   let id_corretora = 0;
 
+
   if (corretora.index()) {
-    id_corretora = parseInt(prompt("ID do corretor: "));
+    id_corretora = parseInt(prompt("ID da corretora: "));
   } else console.log("Cadastre uma corretora para inserir um corretor");
 
   if (nome != "" && corretora.show(id_corretora)) {

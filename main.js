@@ -3,6 +3,7 @@ const prompt = require("prompt-sync")();
 const corretora = require("./modulos/corretora.js");
 const cliente = require("./modulos/cliente.js");
 const corretor = require("./modulos/corretor.js");
+const imovel = require("./modulos/imovel.js");
 
 const menuPrincipal = () => {
   console.log(`
@@ -15,6 +16,7 @@ const menuPrincipal = () => {
       1 - CORRETORA
       2 - CLIENTE
       3 - CORRETOR
+      4 - IMÓVEL
       0 - Sair
       `);
 
@@ -30,6 +32,10 @@ const menuPrincipal = () => {
 
       case 3:
         menuCorretor();
+        break;
+
+      case 4:
+        menuImovel();
         break;
 
       case 0:
@@ -157,5 +163,43 @@ const menuCorretor = () => {
     }
   }
 };
+
+const menuImovel = () => {
+    console.log("GERENCIAMENTO DE IMÓVEL");
+    while (true) {
+      console.log(`
+                    1 - CADASTRAR IMÓVEL
+                    2 - LISTAR IMÓVEL
+                    3 - ATUALIZAR IMÓVEL
+                    4 - EXCLUIR IMÓVEL
+                    0 - SAIR   
+                    `);
+      const opcaoS = parseInt(prompt(": ")); // Opcão de serviço
+      switch (opcaoS) {
+        case 1:
+          imovel.store();
+          break;
+  
+        case 2:
+          imovel.index();
+          break;
+  
+        case 3:
+          imovel.update();
+          break;
+  
+        case 4:
+          imovel.destroy();
+          break;
+  
+        case 0:
+          return;
+  
+        default:
+          console.log("Opção inválida");
+          break;
+      }
+    }
+  };
 
 menuPrincipal();
