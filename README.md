@@ -26,4 +26,21 @@ O foco do projeto é demonstrar:
 
 ---
 
+## 📌 Funcionalidades
+
+| Recurso | Descrição |
+|--------|-----------|
+| Cadastro de Proprietários | Registra pessoas responsáveis por imóveis |
+| Cadastro de Imóveis | Armazena informações das propriedades |
+| Consultas | Permite visualizar imóveis e proprietários cadastrados |
+| Relacionamento Básico | Liga imóvel ao proprietário correspondente |
+
+---
+
+## 🏁 Como Executar
+
+```bash
+git clone https://github.com/PedroTerra11/corretora-imoveis-main
+cd corretora-imoveis-main
+node index.js
 
